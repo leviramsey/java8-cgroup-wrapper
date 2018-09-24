@@ -32,7 +32,8 @@ The overall philosophy is that magic should be opt-in.  The wrapper will only se
 
 * The relevant options (`-Xms`, `-Xmx`, and `-XX:ParallelGCThreads=` are not included in the arguments
 AND
-* The `JAVA_USE_CGROUP` environment variable is set to `yes`; if not so set, the wrapper will
+* The `JAVA_USE_CGROUP` environment variable is set to `yes`; if not so set, the wrapper will defer
+entirely to the stock JVM.
 
 Note that passing either of `-Xms` or `-Xmx` will prevent the heap-size determination from occurring
 (most server usage of the JVM should set both to the same value).
