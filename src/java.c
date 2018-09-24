@@ -62,7 +62,6 @@ int main(int argc, char **argv) {
 	// Copy the rest (including the trailing NULL) at the back of the arg list...
 	memcpy(munged_args + munged_argc_delta + 1, argv + 1, argc * sizeof(char *));
 
-	printf("Injecting heap arguments if necessary\n");
 	inject_heap_size(munged_argc, munged_args);
 	inject_gc(munged_argc, munged_args);
 
