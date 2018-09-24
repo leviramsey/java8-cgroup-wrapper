@@ -86,7 +86,7 @@ static char * orig_java_path() {
 		exit(2);
 	}
 
-	if (res == maxlen) {
+	if (res > maxlen) {
 		fprintf(stderr, "Path too long, aborting\n");
 		exit(3);
 	}
