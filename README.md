@@ -65,7 +65,7 @@ with less than 2GB) percent of 1GB less than the cgroup limit.
 | 512MB | 90 | 230.4MB (235929KB in fact) |
 | 512MB | 67 | 171.5MB (175636KB) |
 | 1GB | 90 | 460.8MB (471859KB) |
-| 1GB | 75 | 768MB |
+| 1GB | 75 | 384MB |
 | 2GB | 90 | 921.6MB (943718KB) |
 | 2GB | 60 | 614.4MB (629145KB) |
 | 4GB | 90 | 2764.8MB (2831155KB) |
