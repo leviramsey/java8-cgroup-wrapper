@@ -374,13 +374,10 @@ static int heap_size_specified(int argc, char **args) {
 }
 
 static int arg_is_heap_size(char *arg) {
-	if (arg != NULL) {
-		if ((arg[0] == '-') &&
-	    	    (arg[1] == 'X') &&
-		    (arg[2] == 'm') &&
-	    	    ((arg[3] == 's') || (arg[3] == 'x'))) {
-			return 1;
-		}
+	if ((arg != NULL) &&
+	    (strncmp(arg, "-Xm", 3) == 0) &&
+	    ((arg[3] == 's') || (arg[3] == 'x'))) {
+		return 1;
 	}
 	return 0;
 }
@@ -403,31 +400,9 @@ static int gc_threads_specified(int argc, char **args) {
 }
 
 static int arg_is_gc_threads(char *arg) {
-	if (arg != NULL) {
-		if ((arg[0] ==  '-') &&
-		    (arg[1] ==  'X') &&
-		    (arg[2] ==  'X') &&
-		    (arg[3] ==  ':') &&
-		    (arg[4] ==  'P') &&
-		    (arg[5] ==  'a') &&
-		    (arg[6] ==  'r') &&
-		    (arg[7] ==  'a') &&
-		    (arg[8] ==  'l') &&
-		    (arg[9] ==  'l') &&
-		    (arg[10] == 'e') &&
-		    (arg[11] == 'l') &&
-		    (arg[12] == 'G') &&
-		    (arg[13] == 'C') &&
-		    (arg[14] == 'T') &&
-		    (arg[15] == 'h') &&
-		    (arg[16] == 'r') &&
-		    (arg[17] == 'e') &&
-		    (arg[18] == 'a') &&
-		    (arg[19] == 'd') &&
-		    (arg[20] == 's') &&
-		    (arg[21] == '=')) {
-			return 1;
-		    }
+	if ((arg != NULL) &&
+	    (strncmp(arg, "-XX:ParallelGCThreads=", 22) == 0)) {
+		return 1;
 	}
 	return 0;
 }
